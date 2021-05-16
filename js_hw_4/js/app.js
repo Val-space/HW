@@ -39,10 +39,10 @@ console.table(sortCountries(countries, 'capital'));
 
 // 3
 
-const getAvarage = function (countries, str) {
+const getAverage = function (countries, str) {
     return countries.reduce(function (acc, country) {
         return (acc + country[str]) / countries.length;
     }, 0).toFixed(2);
 }
 
-console.log(getAvarage(countries, 'population'));
+console.log(getAverage(countries, 'population'));

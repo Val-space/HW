@@ -1,17 +1,44 @@
 // console.table(countries);
+// console.log(countries);
 
-const showCountrieInfo = function (countries, args) {
-    let newCountrieList = countries.map(function (country) {
-        return args.map(function (i) {
-            return `${i}:${country[i]}`
+// const showCountrieInfo = function (countries, args) {
+//     let newCountrieList = countries.map(function (country) {
+//         return args.map(function (i) {
+//             return `${i}:${country[i]}`
+//         })
+//     })
+//     return newCountrieList;
+// }
+
+
+// const showCountrieInfo = function (countries, args) {
+//     let obj = {};
+//     countries.map(function (country) {
+//         args.map(function (i) {
+//             obj[i] = country[i]
+//         })
+//     })
+//     return obj;
+// }
+
+
+// console.log(showCountrieInfo(countries, ['name', 'capital']));
+
+
+
+//1
+const showCoutriesFields = function (countries, keys) {
+    return countries.map(function (country) {
+        let objKeys = Object.keys(country)
+        objKeys.forEach(function (item) {
+            if (keys.indexOf(item) === -1) {
+                delete country[item]
+            }
         })
-    })
-    return newCountrieList;
+        return country;
+    });
 }
-
-
-console.log(showCountrieInfo(countries, ['name', 'area', 'population']));
-
+console.log(showCoutriesFields(countries, ['name', 'population', 'capital']))
 
 
 // 2
@@ -34,7 +61,7 @@ const sortCountries = function (countries, str) {
 }
 
 // console.table(sortCountries(countries, 'area'));
-console.table(sortCountries(countries, 'capital'));
+// console.table(sortCountries(countries, 'capital'));
 
 
 // 3

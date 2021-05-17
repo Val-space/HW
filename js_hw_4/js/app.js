@@ -1,44 +1,37 @@
 // console.table(countries);
 // console.log(countries);
 
-// const showCountrieInfo = function (countries, args) {
-//     let newCountrieList = countries.map(function (country) {
-//         return args.map(function (i) {
-//             return `${i}:${country[i]}`
-//         })
-//     })
-//     return newCountrieList;
-// }
-
-
-// const showCountrieInfo = function (countries, args) {
-//     let obj = {};
-//     countries.map(function (country) {
-//         args.map(function (i) {
-//             obj[i] = country[i]
-//         })
-//     })
-//     return obj;
-// }
-
-
-// console.log(showCountrieInfo(countries, ['name', 'capital']));
-
 
 
 //1
-const showCoutriesFields = function (countries, keys) {
-    return countries.map(function (country) {
-        let objKeys = Object.keys(country)
-        objKeys.forEach(function (item) {
-            if (keys.indexOf(item) === -1) {
-                delete country[item]
-            }
+const showCountrieInfo = function (countries, args) {
+    let newCountrieList = countries.map(function (country) {
+        let obj = {};
+        args.forEach(i => {
+            obj[i] = country[i]
         })
-        return country;
-    });
+        return obj;
+    })
+    return newCountrieList;
 }
-console.log(showCoutriesFields(countries, ['name', 'population', 'capital']))
+
+
+console.log(showCountrieInfo(countries, ['population', 'area']));
+
+
+
+// const showCoutriesFields = function (countries, keys) {
+//     return countries.map(function (country) {
+//         let objKeys = Object.keys(country)
+//         objKeys.forEach(function (item) {
+//             if (keys.indexOf(item) === -1) {
+//                 delete country[item]
+//             }
+//         })
+//         return country;
+//     });
+// }
+// console.log(showCoutriesFields(countries, ['name', 'population', 'capital']))
 
 
 // 2

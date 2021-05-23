@@ -1,18 +1,14 @@
 // console.table(countries);
 // console.log(countries);
-
-
-
 //1
 const showCountrieInfo = function (countries, args) {
-    let newCountrieList = countries.map(function (country) {
+    return countries.map(function (country) {
         let obj = {};
         args.forEach(i => {
-            obj[i] = country[i]
+            obj[i] = country[i] || null;
         })
         return obj;
-    })
-    return newCountrieList;
+    });
 }
 
 
@@ -35,22 +31,24 @@ console.log(showCountrieInfo(countries, ['population', 'area']));
 
 
 // 2
-const sortCountries = function (countries, str) {
+const sortCountries = function (countries, key) {
     let sortedCountries = [...countries].sort(function (countryA, countryB) {
-        if (typeof (countryA[str]) == 'number') {
-            return countryB[str] - countryA[str];
+        // if (typeof (countryA[key]) === 'number') {
+        //     return countryB[key] - countryA[key];
 
-        } else if (typeof (countryA[str]) == 'string') {
-            if (countryA[str] > countryB[str]) {
-                return 1;
-            }
-            if (countryB[str] > countryA[str]) {
-                return -1;
-            }
-            return 0;
-        }
+        // } else if (typeof (countryA[key]) == 'string') {
+        //     if (countryA[key] > countryB[key]) {
+        //         return 1;
+        //     }
+        //     if (countryB[key] > countryA[key]) {
+        //         return -1;
+        //     }
+        //     return 0;
+        // }
+        return typeof countryA[key] === 'number' ?
+            countryB[key] - countryA[key] : countryA[key] > countryB[key] ? 1 : -1
     });
-    return sortedCountries;
+    // return sortedCountries;
 }
 
 // console.table(sortCountries(countries, 'area'));
@@ -66,3 +64,13 @@ const getAverage = function (countries, str) {
 }
 
 console.log(getAverage(countries, 'population'));
+
+
+
+// 
+function addNumbers(num1) {
+    return function (num2) {
+        return num1 + num2;
+    }
+}
+console.log(addNumbers(5)(8))

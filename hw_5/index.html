@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="registration-form">
+        <div class="form__name">
+            <label for="name">Name:</label>
+            <input type="text" class="name" name="name" value="" placeholder="Your name" required>
+        </div>
+        <div class="form__email">
+            <label for="email">Email:</label>
+            <input type="text" class="email" name="Email" value="" placeholder="Your email" required>
+        </div>
+        <div class="form__age">
+            <label for="age">Age:</label>
+            <input type="text" name="age" class="age" min="0" max="100" placeholder="Your age" required>
+        </div>
+        <div class="form__textarea"><textarea class="comment" name="comment" cols="16" rows="4"
+                placeholder="Comment here"></textarea>
+        </div>
+        <div><select name="" class="selectedCountry">
+                <option disabled>Select country</option>
+                <option value="UA">Ukraine</option>
+                <option value="DE">Germany</option>
+                <option value="IT">Italy</option>
+            </select>
+        </div>
+
+        <div class="form__submit">
+            <button class="submit-btn" type="submit" value="Submit"></button>
+        </div>
+
+    </form>
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,20 +1,39 @@
-const submitBtn = document.querySelector(".submit-btn"),
+// const registrationForm = document.getElementById("registration-form"),
+//     userName = document.querySelector('.name'),
+//     userEmail = document.querySelector('.email'),
+//     userAge = document.querySelector('.age'),
+//     userComment = document.querySelector(".comment"),
+//     userCountry = document.querySelector(".selectedCountry");
 
-    registrationForm = document.getElementById("registration-form"),
-    userName = document.querySelector('.name'),
-    userEmail = document.querySelector('.email'),
-    userAge = document.querySelector('.age'),
-    userComment = document.querySelector(".comment"),
-    userCountry = document.querySelector(".selectedCountry");
+// const createUser = (name, email, age, comment, country) => {
+//     let user = {
+//         name,
+//         email,
+//         age,
+//         comment,
+//         country
+//     }
+//     return user;
+// }
 
-    userName = document.getElementById('name'),
-    userEmail = document.getElementById('email'),
-    userAge = document.getElementById('age'),
-    userComment = document.getElementById("textarea"),
-    userCountry = document.getElementById("selectedCountry");
+// registrationForm.onsubmit = (e) => {
+//     e.preventDefault();
+//     console.log(createUser(userName.value, userEmail.value, userAge.value, userComment.value, userCountry.value));
+// }
 
 
-const createUser = (name, email, age, comment, country) => {
+
+
+
+const registrationForm = document.getElementById("registration-form");
+
+registrationForm.onsubmit = (e) => {
+    let name = document.querySelector('#registration-form input[name="name"]')?.value,
+        email = document.querySelector('#registration-form input[name="email"]')?.value,
+        age = +document.querySelector('#registration-form input[name="age"]')?.value,
+        comment = document.querySelector('#registration-form [name="comment"]')?.value,
+        country = document.querySelector('#registration-form [name="country"]')?.value;
+
     let user = {
         name,
         email,
@@ -22,21 +41,6 @@ const createUser = (name, email, age, comment, country) => {
         comment,
         country
     }
-    return user;
-}
-
-<<<<<<< HEAD
-// submitBtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     console.log(createUser(userName.value, userEmail.value, userAge.value, userComment.value, userCountry.value));
-// })
-registrationForm.onsubmit = (e) => {
     e.preventDefault();
-    console.log(createUser(userName.value, userEmail.value, userAge.value, userComment.value, userCountry.value));
+    console.log(user);
 }
-=======
-submitBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log(createUser(userName.value, userEmail.value, userAge.value, userComment.value, userCountry.value));
-})
->>>>>>> 62b36416a1d079bd8d7b1713c233137a77c4a506

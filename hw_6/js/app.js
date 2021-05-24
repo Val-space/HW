@@ -9,8 +9,8 @@ const renderCountries = countries => {
                 <td>${country.population}</td>
                 <td>${country.area}</td>
                 <td>${country.region}</td>
-                <td>${country.currencies.map(i => i.name)}</td>
-                <td>${country.languages.map(i => i.name)}</td>
+                <td>${country.currencies.map(i => i.name).join(', ')}</td>
+                <td>${country.languages.map(i => i.name).join(', ')}</td>
                 <td><img src="${country.flag}"></td>
             </tr>`;
     }

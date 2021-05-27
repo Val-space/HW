@@ -9,8 +9,8 @@ const renderCountries = countries => {
                 <td>${country.population}</td>
                 <td>${country.area}</td>
                 <td>${country.region}</td>
-                <td>${country.currencies.map(i => i.name).join(', ')}</td>
-                <td>${country.languages.map(i => i.name).join(', ')}</td>
+                <td>${country.currencies}</td>
+                <td>${country.languages}</td>
                 <td><img src="${country.flag}"></td>
             </tr>`;
     }
@@ -29,11 +29,11 @@ const getData = () => {
                     name: country.name,
                     population: country.population,
                     capital: country.capital,
-                    area: country.area,
+                    area: country.area || 0,
                     region: country.region,
-                    currencies: country.currencies,
-                    languages: country.languages,
-                    flag: country.flag
+                    currencies: country.currencies.map(i => i.name).join(', '),
+                    languages: country.languages.map(i => i.name).join(', '),
+                    flag: country.flag || ''
                 };
             });
             renderCountries(countries);

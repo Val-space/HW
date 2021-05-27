@@ -11,6 +11,7 @@ window.onload = function () {
             renderCountries(filteredCountries);
             $('.countries-select')[0].selectedIndex = 0
 
+<<<<<<< HEAD
             // let availableCountries = countries.map((country) => country.name)
 
             // $('#search').autocomplete({
@@ -23,6 +24,15 @@ window.onload = function () {
         $('#search').autocomplete({
             source: availableCountries,
         })
+=======
+            let availableCountries = countries.map((country) => country.name)
+
+            $('#search').autocomplete({
+                source: availableCountries,
+            })
+
+        });
+>>>>>>> 30f285f4391e11ca14a6e39e18af1249c9a1c86b
         // SORT BY TABLE HEAD CLICK
         $('table thead th.bg-warning').on('click touch', e => {
             let field = e.currentTarget.innerText;
@@ -58,7 +68,11 @@ window.onload = function () {
                 }
             });
             renderCountries(filteredCountry);
+<<<<<<< HEAD
             $('#search').val('')
+=======
+            $('#search')[0].value = ''
+>>>>>>> 30f285f4391e11ca14a6e39e18af1249c9a1c86b
 
         })
     }

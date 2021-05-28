@@ -39,3 +39,12 @@ Auto_Electric.prototype = Object.create(Auto.prototype)
 Auto_Electric.prototype.showBatteryConfig = function () {
     return this.batteryCapacity
 }
+
+
+
+
+let tesla = new Auto_Electric('Tesla', 'Model X', 2020, 'AF12124AEGJ32413', '100 кВт/ч')
+
+tesla.log() // ‘Tesla Model X 2020’
+tesla.checkVin() // true
+tesla.showBatteryConfig() // ‘100 кВт/ч’

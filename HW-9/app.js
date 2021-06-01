@@ -1,4 +1,4 @@
-let date = 20200302;
+let date = moment(Date.now()).format('YYYYMMDD');
 
 let inputData = document.querySelector('.input');
 inputData.addEventListener('change', () => {
@@ -23,7 +23,6 @@ const renderCurrencies = curr => {
 
 let currenciesInfo = [];
 const getData = (date) => {
-    console.log(date)
     fetch(`https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date=${date}&json`)
         .then(res => res.json()).then(data => {
             currenciesInfo = data.map(currency => {

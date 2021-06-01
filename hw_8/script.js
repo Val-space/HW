@@ -9,7 +9,7 @@ Auto.prototype.log = function () {
     console.log(this.make + ' ' + this.model + ' ' + this.year);
 }
 Auto.prototype.checkVin = function () {
-    return this.vinCode.length === 16 ? true : false
+    return this.vinCode.length === 16;
 }
 
 

@@ -1,12 +1,13 @@
-let inputData = document.querySelector('.input');
-
+const inputData = document.querySelector('.input');
 inputData.value = moment(Date.now()).format('YYYY-MM-DD');
-let showDate = moment(inputData.value).format('YYYYMMDD');
 
+const showRateByDate = () => {
+    let showDate = moment(inputData.value).format('YYYYMMDD');
+    getData(showDate);
+}
 
 inputData.addEventListener('change', () => {
-    showDate = moment(inputData.value).format("YYYYMMDD");
-    getData(showDate)
+    showRateByDate();
 })
 
 const renderCurrencies = curr => {
@@ -33,4 +34,4 @@ const getData = (date) => {
             renderCurrencies(currenciesInfo);
         });
 }
-getData(showDate);
+showRateByDate();

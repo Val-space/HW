@@ -1,14 +1,15 @@
-let date = moment(Date.now()).format('YYYYMMDD');
-
 let inputData = document.querySelector('.input');
+
+inputData.value = moment(Date.now()).format('YYYY-MM-DD');
+let showDate = moment(inputData.value).format('YYYYMMDD');
+
+
 inputData.addEventListener('change', () => {
-    date = moment(inputData.value).format("YYYYMMDD");
-    // console.log(date)
-    getData(date)
+    showDate = moment(inputData.value).format("YYYYMMDD");
+    getData(showDate)
 })
 
 const renderCurrencies = curr => {
-    console.log(curr);
     let htmlStr = '';
     for (let i of curr) {
         htmlStr += `<tr>
@@ -17,9 +18,7 @@ const renderCurrencies = curr => {
             </tr>`;
     }
     document.querySelector('table > tbody').innerHTML = htmlStr;
-
 }
-
 
 let currenciesInfo = [];
 const getData = (date) => {
@@ -34,4 +33,4 @@ const getData = (date) => {
             renderCurrencies(currenciesInfo);
         });
 }
-getData(date);
+getData(showDate);

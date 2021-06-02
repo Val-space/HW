@@ -4,21 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
+<style>
+    main {
+        font-family: 'Roboto', sans-serif;
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 2rem;
+    }
+
+    label {
+        margin-right: 1rem;
+        font-size: 1.2rem;
+    }
+
+    input {
+        height: 35px;
+        margin-bottom: 2rem;
+    }
+
+    th {
+        text-align: left;
+    }
+</style>
 
 <body>
-    <input class='input' type="date">
-    <table>
-        <thead>
-            <tr>
-                <th>Currencies</th>
-                <th>Rate</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <main>
 
+        <label for="dateInput">Оберіть дату:</label>
+        <input name'dateInput'' class='input' type="date">
+        <table>
+            <thead>
+                <tr>
+                    <th>Bалюта</th>
+                    <th>Курс</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

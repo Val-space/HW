@@ -14,7 +14,7 @@ function App() {
   ]
 
   return (
-    <div>
+    <div style={{margin:'0 auto', maxWidth:'95%'}}>
       <CustomTable somenames={names}/>
     </div>
   );

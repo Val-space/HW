@@ -6,7 +6,7 @@ function ShowNamesButton({name,email}){
         console.log(name,email)
         }
 
-    return  <Button variant="info" onClick={handleButtonClick}>Click me</Button>
+    return  <Button variant="info" onClick={handleButtonClick}>Show in console</Button>
 }
 
 export default ShowNamesButton;

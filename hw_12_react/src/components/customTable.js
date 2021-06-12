@@ -17,7 +17,7 @@ function CustomTable({somenames}){
                     </tr>
                 </thead>
                 <tbody>  
-                     {somenames.map(person => <TableItem name={person.name} email={person.email} age={person.age} id={person.id}/>)}
+                     {somenames.map(person => <TableItem key={person.id} name={person.name} email={person.email} age={person.age} id={person.id}/>)}
                 </tbody>
         </Table>
        </>

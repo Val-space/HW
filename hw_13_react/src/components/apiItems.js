@@ -110,7 +110,7 @@ export const getItems = () => {
                     imgSrc: "https://static.nike.com/a/images/c_limit,w_318,f_auto/t_product_v1/6d21d736-6a4b-441b-b756-c6d591a379d3/zoomx-vaporfly-next-2-og-racing-shoe-dxSLFw.png",
                 },
             ])
-        }, 5000)
+        }, 1000)
 
     })
     return promise;

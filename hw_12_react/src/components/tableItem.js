@@ -1,16 +1,22 @@
-import React from "react";
-import ShowNamesButton from "./showNamesButton";
+import React,{useRef} from "react";
+import Button from 'react-bootstrap/Button';
+// import ShowNamesButton from "./showNamesButton";
 
-function TableItem({ name, email, age, id }) {
+function TableItem({ person,changeAdultName}) {
+  const changeNameInput = useRef(null)
   return (
     <>
-      <tr key={id}>
-        <td>{id}</td>
-        <td>{name}</td>
-        <td>{email}</td>
-        <td>{age}</td>
+      <tr>
+        <td>{person.id}</td>
+        <td>{person.name}</td>
+        <td>{person.email}</td>
+        <td>{person.age}</td>
         <td>
-          <ShowNamesButton name={name} email={email} />
+        <input type={'text'} placeholder={'change name'} ref={changeNameInput}/>
+        <Button className={'ml-4'}
+                    onClick={() => changeAdultName(person.id, changeNameInput.current.value)}
+                    variant="dark">Set New Name</Button>
+          {/* <ShowNamesButton name={person.name} email={person.email} /> */}
         </td>
       </tr>
     </>

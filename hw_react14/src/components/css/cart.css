@@ -1,0 +1,10 @@
+.cart {
+    position: fixed;
+    z-index: 2;
+    right: 3rem;
+    top: 1rem;
+    background-color: #b9cde269;
+    border: 1px solid #34383c;
+    border-radius: .3rem;
+    width: 180px;
+}

@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
 
-
 function CatalogItem({ item, addToCart, removeFromCart, cart }) {
+  const isCartFull = cart.filter((el) => el.id === item.id).length;
   return (
     <Col className="my-2">
       <Card style={{ width: "18rem" }}>
@@ -12,7 +12,7 @@ function CatalogItem({ item, addToCart, removeFromCart, cart }) {
             {item.brand} {item.model}
           </Card.Title>
           <Card.Text>Price:{item.price}$</Card.Text>
-          {cart.filter((el) => el.id === item.id).length ? (
+          {isCartFull ? (
             <Button variant="dark" onClick={() => removeFromCart(item.id)}>
               Remove from cart
             </Button>
